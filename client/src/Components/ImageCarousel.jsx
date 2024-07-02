@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
+
 const ImageCarousel = ({ images }) => {
   const parsedImages = images ? JSON.parse(images) : null;
   const [slide, setSlide] = useState(0);
@@ -14,7 +15,7 @@ const ImageCarousel = ({ images }) => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 4500); // Change slide every 5 seconds (adjust as needed)
+    const interval = setInterval(nextSlide, 5000); 
     return () => clearInterval(interval);
   }, [slide]); // Reset interval when slide changes
 
@@ -26,7 +27,7 @@ const ImageCarousel = ({ images }) => {
           <img
             src={`http://localhost:3000/${item}`}
             key={idx}
-            className={slide === idx ? "slide" : "slide slide-hidden"}
+            className={slide === idx ? "slide" : ""}
             alt={`Slide ${idx}`}
           />
         );

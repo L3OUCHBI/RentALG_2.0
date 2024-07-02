@@ -13,10 +13,11 @@ import AdminReportList from "./Routes/AdminReportList";
 import AdminStats from "./Components/AdminStats";
 import AccommodationsStats from"./Components/AccommodationsStats";
 import UpcomingGuests from "./Routes/UpcomingGuests";
+
 function App() {
   const { user } = useContext(UserContext);
   return (
-    <>
+    <> 
       <Routes>
         <Route
           path="/"
@@ -24,7 +25,6 @@ function App() {
             !user || (user && user.role === "user") ? <Home /> : <AdminHome />
           }
         />
-
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/bookings" element={<Bookings />} />
@@ -36,8 +36,9 @@ function App() {
         <Route path="reports" element={<AdminReportList />} />
         <Route path="/AdminStats" element={<AdminStats />} />
         <Route path="/AccommodationsStats" element={<AccommodationsStats />} />
-
+       
       </Routes>
+    
     </>
   );
 }

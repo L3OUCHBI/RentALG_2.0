@@ -4,6 +4,7 @@ import { SecondaryButton } from "./Buttons";
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import logo from "../assets/logo-transparent-png.png";
+
 export default function Header() {
   const { user, logout } = useContext(UserContext);
 
@@ -26,16 +27,16 @@ export default function Header() {
           </Link>
 
           <div className="right-side-nav2">
-            <Link to="/AdminStats">
+            <Link to="/AdminStats" className="link-decoration">
               <SecondaryButton
                 text="DASHBOARD"
                 style={{
                   width: "160px",
-                  marginTop: "-2px",
-                  border: "0.5px solid",
+                  marginTop: "-2px",           
                 }}
               />
             </Link>
+          
             <UserDropDown logout={logout} />
           </div>
         </>

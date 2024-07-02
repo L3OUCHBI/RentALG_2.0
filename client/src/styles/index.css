@@ -60,8 +60,6 @@ body {
   border-radius: 5px;
   box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.2);
   text-align: center;
-  cursor: pointer;
- 
 }
 
 .secondary-btn:hover {
@@ -433,6 +431,7 @@ color: var(--primary-color);
   height: 400px;
   margin: 9px 0px 9px 0px;
   transform: translateX(30%);
+  overflow: hidden;
 }
 
 
@@ -448,16 +447,23 @@ color: var(--primary-color);
 
 .slide-hidden {
   display: none;
+    opacity: 0;
 }
 
 
 .arrow {
-  position: absolute;
+  
   filter: drop-shadow(0px 0px 5px #555);
   width: 2rem;
   height: 2rem;
-  color: white;
- 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem; 
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .arrow:hover {
@@ -473,21 +479,21 @@ color: var(--primary-color);
 }
 
 .indicators {
-  display: flex;
   position: absolute;
-  bottom: 1rem;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
 }
 
 .indicator {
-  background-color: white;
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 100%;
-  border: none;
-  outline: none;
-  box-shadow: 0px 0px 5px #555;
-  margin: 0 0.2rem;
-  cursor: pointer;
+  width: 10px;
+    height: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .indicator-inactive {
@@ -878,10 +884,10 @@ height: 20px;
 }
 .right-side-nav2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 12px;
-  width: 300px;
+  width: 400px;
 }
 .review-input-container {
   padding-bottom: 20px;
@@ -1803,3 +1809,101 @@ height: 20px;
     width: 20px;
     height: 20px;
   }
+  .dark-light-mode-light{
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(223, 239, 240);
+  border: none;
+  border-radius: 25px;
+  width: 80px;
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+  left:50%;
+  top: 15px;
+  }
+  .light-mode{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40px;
+    height: 35px; 
+    border: none;
+    border-radius: 25px 0px 0px 25px;
+  }
+  .light-mode{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40px;
+    height: 35px; 
+    border: solid 0.85px var(--secondary-color);
+    border-radius: 25px 0px 0px 25px;
+  }
+  .light-mode:hover{
+    border: solid 1px var(--secondary-color);
+   
+    filter: brightness(95%);
+    color: rgb(255, 217, 0);
+  }
+
+  .light-mode svg{
+    width: 27px;
+    height: 27px;
+    transition: 1s ease-in-out;
+  }
+  .light-mode svg:hover{
+    rotate: 180deg;
+    height: 30px;
+    width: 30px;
+   
+  }
+  
+  .dark-mode{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40px;
+    height: 35px;
+    border: solid 0.85px var(--secondary-color);
+    border-radius: 0px 25px 25px 0px;
+    transition: 0.7s ease-in-out;
+  }
+  .dark-mode svg{
+    width: 25px;
+    height: 25px;
+    transition: 0.7s ease-in-out;
+  }
+  
+  .dark-mode svg:hover{
+    rotate: 15deg;
+    height: 30px;
+    width: 30px;
+  }
+  .dark-mode:hover{
+    background-color: #494848;
+    color: white;  
+  }
+
+  .carousel img {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;
+  }
+  
+  .carousel img.slide {
+    opacity: 1;
+    position: relative;
+  }
+  
+ 
+  
+ 
